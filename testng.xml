@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="OrangeHRM Suite">
+
+    <listeners>
+        <listener class-name="com.ylli.orangehrm.listeners.TestListener"/>
+    </listeners>
+
+    <test name="OrangeHRM Tests">
+
+        <classes>
+
+            <class name="com.ylli.orangehrm.tests.ValidLoginTest"/>
+
+            <class name="com.ylli.orangehrm.tests.InvalidLoginTest"/>
+
+            <class name="com.ylli.orangehrm.tests.AddEmployeeTest"/>
+
+            <class name="com.ylli.orangehrm.tests.SearchEmployeeTest"/>
+
+            <class name="com.ylli.orangehrm.tests.DeleteEmployeeTest"/>
+
+        </classes>
+
+    </test>
+
+</suite>
