@@ -14,34 +14,40 @@ import com.ylli.orangehrm.utils.ScreenshotUtils;
 @Listeners(TestListener.class)
 public class ValidLoginTest extends CommonMethods {
 
-    @Test
-    public void validLoginTest() {
+	@Test
+	public void validLoginTest() {
 
-        BaseClass.setUp();
-        wait(1);
-        LoginPage loginPage =
-                new LoginPage();
+	    BaseClass.setUp();
 
-        sendText(
-                loginPage.username,
-                ConfigsReader.getProperty("username"));
-        wait(1);
-        sendText(
-                loginPage.password,
-                ConfigsReader.getProperty("password"));
-        wait(1);
-        click(loginPage.loginBtn);
+	    wait(1);
 
-        DashboardPage dashboard =
-                new DashboardPage();
+	    LoginPage loginPage =
+	            new LoginPage();
 
-        wait(1);
+	    sendText(
+	            loginPage.username,
+	            ConfigsReader.getProperty("username"));
 
-        Assert.assertTrue(false);
+	    wait(1);
 
-        ScreenshotUtils.takeScreenshot(
-                "SuccessfulLogin");
-        
-        BaseClass.tearDown();
-    }
-}
+	    sendText(
+	            loginPage.password,
+	            ConfigsReader.getProperty("password"));
+
+	    wait(1);
+
+	    click(loginPage.loginBtn);
+
+	    DashboardPage dashboard =
+	            new DashboardPage();
+
+	    wait(2);
+
+	    Assert.assertTrue(
+	            dashboard.dashboardText.isDisplayed());
+
+	    ScreenshotUtils.takeScreenshot(
+	            "SuccessfulLogin");
+
+	    BaseClass.tearDown();
+	}}
